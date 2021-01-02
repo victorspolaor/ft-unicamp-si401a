@@ -1,59 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rolling Tetris</title>
-    <link rel="stylesheet" href="stylesheet.css">
-</head>
-<body>
-    <header>
-        <div class="container">
-            <div class="logo">
-                <img src="images/logo/rolling_tetris_logo.png" alt="Rolling Tetris">
-            </div>
-            <nav>
-                <div class="menu">
-                    <ul>
-                        <li><a href="/newgame_page.html">NOVO JOGO</a></li><br><br>
-                        <li><a href="/ranking-page.html">RANKING</a></li><br>
-                    </ul>
-                </div>
-            </nav>
+    <link rel="stylesheet" href="styles/homepage.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo">
+        <img src="images/logo/rolling_tetris_logo.png" alt="Rolling Tetris" />
+      </div>
+      <nav>
+        <div class="menu">
+          <a href="new-game.html"><span>NOVO JOGO</span></a>
+          <a href="ranking.html"><span>RANKING</span></a>
         </div>
-    </header>
-
-    <button class="open-button" onclick="openForm()">LOGIN</button>
-
-    <div class="form-popup" id="myForm">
-        <form action="/action_page.php" class="form-container">
-            <h1>Login</h1>
-
-            <label for="email"><b>E-mail</b></label>
-            <input type="text" placeholder="Insira seu e-mail" name="email" required>
-
-            <label for="psw"><b>Senha</b></label>
-            <input type="password" placeholder="Insira a senha" name="psw" required>
-
-            <button type="submit" class="btn">Login</button>
-            <button type="button" class="btn cancel" onclick="closeForm()">Fechar</button>
-        </form>
+      </nav>
     </div>
 
-    <script>
-        function openForm() {
-            document.getElementById("myForm").style.display = "block";
-        }
-
-        function closeForm() {
-            document.getElementById("myForm").style.display = "none";
-        }
-    </script>
-
     <footer>
-        <div class="rodape">
-            <p>Rolling Tetris é um projeto criado na UNICAMP para a disciplina SI401A - Programação para a Web</p>
-        </div>
+      <div class="rodape">
+        <p>
+          Rolling Tetris é um projeto criado na UNICAMP para a disciplina SI401A
+          - Programação para a Web
+        </p>
+      </div>
     </footer>
-</body>
+  </body>
 </html>

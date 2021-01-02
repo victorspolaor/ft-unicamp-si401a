@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New game</title>
+    <link rel="stylesheet" href="styles/newgame.css" />
+  </head>
+  <body>
+    <div class="container">
+      <main>
+        <canvas id="tetris" width="200" height="400"></canvas>
+      </main>
+      <section>
+        <div>
+          <div class="flex-row score">
+            <h1>Pontuação</p>
+            <div id="score"> 0</div>
+          </div>
+          <div class="flex-row level">
+            <h1>Level</p>
+            <div id="lines"> 1</div>
+          </div>
+          <div class="flex-row score">
+            <h1>Tempo</p>
+            <div id="time"> 00:00</div>
+          </div>
+          <div>
+            <button class="newgame" id="start" onclick="handleStart()">
+              Iniciar
+            </button>
+          </div>
+          <div class="flex-row score">
+            <h1>Dificuldade</p>
+            <select name="difficulty" id="difficulty">
+              <option value="easy">Fácil</option>
+              <option value="medium">Médio</option>
+              <option value="hard">Difícil</option>
+            </select>
+          </div>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <div class="rodape">
+        <p>
+          Rolling Tetris é um projeto criado na UNICAMP para a disciplina SI401A
+          - Programação para a Web
+        </p>
+      </div>
+    </footer>
+    <script src="pecas.js"></script>
+    <script src="jogo.js"></script>
+  </body>
+</html>
