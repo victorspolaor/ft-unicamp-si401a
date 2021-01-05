@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rolling Tetris</title>
+    <link rel="stylesheet" href="styles/homepage.css"/>
+
+    <script>
+
+        function handleCancel() {
+            location.replace("login.html")
+        }
+
+        function handleRegister() {
+            let xml = new XMLHttpRequest();
+            xml.onreadystatechange = function () {
+                if (xml.readyState === 4) {
+                    switch (xml.status) {
+                        case 200:
+                            location.replace("homepage.html");
+                            break;
+                        default:
+                            window.alert(xml.response);
+                            break;
+                    }
+                }
+            };
+
+            let formData = new FormData();
+            formData.append("username", document.getElementById("username").value);
+            formData.append("pwd", document.getElementById("pwd").value);
+
+            xml.open("POST", "register.php", false);
+            xml.send(formData);
+        }
+
+    </script>
+</head>
+<body>
+
+<div class="container">
+    <nav>
+        <div class="menu">
+            <div>
+                <label for="username">Usuário:</label>
+                <input type="text" id="username" name="username" maxlength="30"><br><br>
+                <label for="pwd">Senha:</label>
+                <input type="password" id="pwd" name="pwd" maxlength="30"><br><br>
+            </div>
+            <div>
+                <button class="open-button" id="register" onclick="handleRegister()">
+                    Cadastrar
+                </button>
+            </div>
+            <div>
+                <button class="open-button" id="cancel" onclick="handleCancel()">
+                    Cancelar
+                </button>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<footer>
+    <div class="rodape">
+        <p>
+            Rolling Tetris é um projeto criado na UNICAMP para a disciplina SI401A
+            - Programação para a Web
+        </p>
+    </div>
+</footer>
+
+</body>
+</html>

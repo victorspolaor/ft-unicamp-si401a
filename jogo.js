@@ -325,5 +325,5 @@ function gameTime() {
 }
 
 function openEndGame() {
-    varWindow = window.open('endgame.html')
+    location.replace('endgame.html')
 }
