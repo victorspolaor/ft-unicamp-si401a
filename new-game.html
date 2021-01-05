@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>New game</title>
+    <title>Novo jogo</title>
     <link rel="stylesheet" href="styles/newgame.css" />
   </head>
   <body>
@@ -14,24 +14,29 @@
       <section>
         <div>
           <div class="flex-row score">
-            <h1>Pontuação</p>
-            <div id="score"> 0</div>
+            <h1>Pontuação</h1>
+            <div id="score">0</div>
           </div>
           <div class="flex-row level">
-            <h1>Level</p>
-            <div id="lines"> 1</div>
+            <h1>Level</h1>
+            <div id="lines">1</div>
           </div>
           <div class="flex-row score">
-            <h1>Tempo</p>
-            <div id="time"> 00:00</div>
+            <h1>Tempo</h1>
+            <div id="time">00:00</div>
           </div>
           <div>
             <button class="newgame" id="start" onclick="handleStart()">
               Iniciar
             </button>
           </div>
+          <div>
+            <button class="pause" id="pause" onclick="handleStop()">
+              Pausar
+            </button>
+          </div>
           <div class="flex-row score">
-            <h1>Dificuldade</p>
+            <h1>Dificuldade</h1>
             <select name="difficulty" id="difficulty">
               <option value="easy">Fácil</option>
               <option value="medium">Médio</option>
