@@ -14,22 +14,12 @@
 </header>
 
 <div class="container">
-    <ul>
+    <ul id="list">
         <li>Jogador 1</li>
         <li>Jogador 2</li>
         <li>Jogador 3</li>
         <li>Jogador 4</li>
         <li>Jogador 5</li>
-        <li>Jogador 6</li>
-        <li>Jogador 7</li>
-        <li>Jogador 8</li>
-        <li>Jogador 9</li>
-        <li>Jogador 10</li>
-        <li>1000000</li>
-        <li>1000000</li>
-        <li>1000000</li>
-        <li>1000000</li>
-        <li>1000000</li>
         <li>1000000</li>
         <li>1000000</li>
         <li>1000000</li>
@@ -52,5 +42,35 @@
         </p>
     </div>
 </footer>
+
+<script>
+
+    function updateList(response) {
+        let array = JSON.parse(response);
+        let len = array.length;
+
+
+
+    }
+
+    xml = new XMLHttpRequest();
+    xml.onreadystatechange = function () {
+        if (xml.readyState === 4) {
+            switch (xml.status) {
+                case 200:
+                    updateList(xml.response)
+                    break;
+                case 500:
+                    window.alert(xml.response);
+                    break;
+            }
+        }
+    };
+
+    xml.open("GET", "ranking.php", false);
+    xml.send();
+
+</script>
+
 </body>
 </html>

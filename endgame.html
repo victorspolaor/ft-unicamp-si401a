@@ -8,6 +8,7 @@
 </head>
 <body>
 <script src="session.js"></script>
+<script src="util.js"></script>
 
 <header class="header">
     <h1>GAME OVER</h1>
@@ -20,9 +21,9 @@
 <div class="container">
     <ul>
         <li>PONTUAÇÃO</li>
-        <li>99999</li>
+        <li id="score">99999</li>
         <li>LEVEL</li>
-        <li>21</li>
+        <li id="level">21</li>
     </ul>
     <nav>
         <div class="menu">
@@ -39,5 +40,32 @@
         </p>
     </div>
 </footer>
+
+<script>
+    let score = getCookie('score');
+    let level = getCookie('level');
+
+    document.getElementById('score').innerHTML = score;
+    document.getElementById('level').innerHTML = level;
+
+    if (score > 0){
+        let xml = new XMLHttpRequest();
+        xml.onreadystatechange = function () {
+            if (xml.readyState === 4) {
+                if (xml.status === 500) {
+                    window.alert(xml.response);
+                }
+            }
+        };
+
+        let formData = new FormData();
+        formData.append("score", score);
+
+        xml.open("POST", "top_score.php", false);
+        xml.send(formData);
+    }
+
+</script>
+
 </body>
 </html>

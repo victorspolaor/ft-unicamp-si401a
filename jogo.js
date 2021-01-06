@@ -27,9 +27,12 @@ const difficulty = {
     EASY: 'easy',
     MEDIUM: 'medium',
     HARD: 'hard',
-}
+};
 
 document.addEventListener("keydown", CONTROL);
+
+document.cookie = "score=0";
+document.cookie = "level=0";
 
 function drawSquare(x, y, color) {
     ctx.fillStyle = color;
@@ -159,7 +162,7 @@ Piece.prototype.lock = function () {
             }
 
             if (this.y + r < 0) {
-                window.location.href = window.location.href.replace("new-game.html", "ranking.html");
+                window.location.href = window.location.href.replace("new-game.html", "endgame.html");
                 gameOver = true;
                 break;
             }
@@ -187,6 +190,9 @@ Piece.prototype.lock = function () {
             score += 10 * multiplier;
             lines += 1;
             multiplier = multiplier + 1;
+
+            document.cookie = "score=" + score;
+            document.cookie = "level=" + lines;
         }
     }
 
